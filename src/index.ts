@@ -135,16 +135,15 @@ JWTOption<Name, Schema>) => {
 		) {
 			let jwt = new SignJWT({
 				...payload,
-				...morePayload,
-				nbf: undefined,
-				exp: undefined
+				...morePayload
+
 			}).setProtectedHeader({
 				alg,
 				crit
 			})
 
-			if (nbf) jwt = jwt.setNotBefore(nbf)
-			if (exp) jwt = jwt.setExpirationTime(exp)
+			if (!morePayload.nbf && nbf) jwt.setNotBefore(nbf)
+			if (!morePayload.exp && exp) jwt.setExpirationTime(exp)
 
 			return jwt.sign(key)
 		},
