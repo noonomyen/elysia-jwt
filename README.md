@@ -2,10 +2,15 @@
 
 Plugin for [Elysia](https://github.com/elysiajs/elysia) for using JWT Authentication.
 
+## Changes
+
+- [d637191](https://github.com/noonomyen/elysia-jwt/commit/d637191e5743a59e0af070c039bc6f9908536f36) - Fix allow set nbf, exp in jwt.sign
+- [92d48ca](https://github.com/noonomyen/elysia-jwt/commit/92d48cad1fd7c8f96ac3be8944d39e3963337496) - Fix type nbf, iat, exp should be number
+
 ## Installation
 
 ```bash
-bun add @elysiajs/jwt
+bun add https://github.com/noonomyen/elysia-jwt.git#publish
 ```
 
 ## Example
